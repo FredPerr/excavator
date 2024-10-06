@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "private": false,
+  "name": "@fredperr/excavator-ui",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    "./styles.css": "./dist/index.css",
+    "./button": "./src/Button.tsx"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@fredperr/excavator-config-ts": "workspace:*",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "@fredperr/excavator-config-eslint": "workspace:*",
+    "typescript": "catalog:",
+    "autoprefixer": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:"
+  },
+  "dependencies": {
+    "react": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  }
+}

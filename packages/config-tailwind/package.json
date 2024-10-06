@@ -1,0 +1,12 @@
+{
+  "name": "@fredperr/excavator-config-tailwind",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "devDependencies": {
+    "@fredperr/excavator-config-ts": "workspace:*",
+    "tailwindcss": "catalog:"
+  }
+}

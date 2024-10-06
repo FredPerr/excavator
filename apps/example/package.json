@@ -1,0 +1,46 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "A blank template to get started with Payload 3.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@payloadcms/db-mongodb": "catalog:",
+    "@payloadcms/next": "catalog:",
+    "@payloadcms/plugin-cloud": "catalog:",
+    "@payloadcms/richtext-lexical": "catalog:",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.8.1",
+    "next": "catalog:",
+    "payload": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "sharp": "0.32.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-next": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  }
+}

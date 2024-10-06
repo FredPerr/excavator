@@ -1,0 +1,26 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+catalog:
+  eslint: "^8"
+  typescript: "^5.6.0"
+  tailwindcss: "^3.4.12"
+  "react": "19.0.0-rc-5dcb0097-20240918"
+  "react-dom": "19.0.0-rc-5dcb0097-20240918"
+  "@types/node": "^22.5.4"
+  "@types/react": "npm:types-react@19.0.0-rc.1"
+  "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  payload: "beta"
+  "@payloadcms/db-mongodb": "beta"
+  "@payloadcms/next": "beta"
+  "@payloadcms/richtext-lexical": "beta"
+  "@payloadcms/plugin-cloud": "beta"
+  "@payloadcms/eslint-config": "beta"
+  "@payloadcms/graphql": "beta"
+  "@payloadcms/ui": "beta"
+  next: "15.0.0-canary.173"
+  eslint-config-next: "^15.0.0-rc.0"
+  autoprefixer: "^10.4.18"
+  postcss: "^8.4.35"
+  

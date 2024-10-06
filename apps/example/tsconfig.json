@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "../../packages/config-ts/nextjs.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "incremental": true,
+    "outDir": "dist",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
