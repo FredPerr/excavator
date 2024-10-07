@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "@fredperr/excavator-example",
   "version": "1.1.1",
   "description": "A blank template to get started with Payload 3.0",
   "license": "MIT",
@@ -17,12 +17,14 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@fredperr/excavator": "workspace:*",
+    "@fredperr/excavator-ui": "workspace:*",
     "@payloadcms/db-mongodb": "catalog:",
     "@payloadcms/next": "catalog:",
     "@payloadcms/plugin-cloud": "catalog:",
     "@payloadcms/richtext-lexical": "catalog:",
     "cross-env": "^7.0.3",
-    "graphql": "^16.8.1",
+    "graphql": "^16.9.0",
     "next": "catalog:",
     "payload": "catalog:",
     "react": "catalog:",
@@ -30,11 +32,15 @@
     "sharp": "0.32.6"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
+    "@fredperr/excavator-config-tailwind": "workspace:*",
+    "@types/node": "^22.7.4",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "catalog:",
     "eslint-config-next": "catalog:",
+    "postcss": "^8.4.47",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {

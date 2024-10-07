@@ -7,35 +7,35 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
-  "sideEffects": [
-    "**/*.css"
-  ],
   "files": [
     "dist/**"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
-    "./button": "./src/Button.tsx"
+    "./button": "./src/Button.tsx",
+    ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
-    "lint": "eslint .",
-    "type-check": "tsc --noEmit"
+    "build:tw": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
+
   "devDependencies": {
     "@fredperr/excavator-config-ts": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "eslint": "catalog:",
     "@fredperr/excavator-config-eslint": "workspace:*",
-    "typescript": "catalog:",
-    "autoprefixer": "catalog:",
+    "tsup": "catalog:",
     "postcss": "catalog:",
-    "tailwindcss": "catalog:"
+    "typescript": "catalog:"
   },
   "dependencies": {
     "react": "catalog:",
+    "react-dom": "catalog:",
     "@fredperr/excavator-config-tailwind": "workspace:*"
   },
   "publishConfig": {

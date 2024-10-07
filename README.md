@@ -49,6 +49,11 @@ const config: Pick<Config, "content" | "presets"> = {
 export default config;
 ```
 
+**In your root view or page to include UI components:**
+```tsx
+import "@fredperr/excavator-ui/styles.css";
+```
+
 ## What it does?
 
 Excavator can be divised between three main parts:
