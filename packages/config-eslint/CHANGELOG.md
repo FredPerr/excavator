@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-eslint
 
+## 0.1.1
+
+### Patch Changes
+
+- 841a9a0: Updated the import of tailwind config
+
 ## 0.1.0
 
 ### Minor Changes

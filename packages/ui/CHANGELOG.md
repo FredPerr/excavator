@@ -1,5 +1,13 @@
 # @fredperr/excavator-ui
 
+## 0.1.1
+
+### Patch Changes
+
+- 841a9a0: Updated the import of tailwind config
+- Updated dependencies [841a9a0]
+  - @fredperr/excavator-config-tailwind@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
