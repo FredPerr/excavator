@@ -29,69 +29,69 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "require": "./dist/index.cjs"
     },
     "./cms": {
-      "import": "./dist/cms/index.js",
+      "import": "./dist/cms/index.mjs",
       "types": "./dist/cms/index.d.ts",
-      "default": "./dist/cms/index.js"
+      "require": "./dist/cms/index.cjs"
     },
     "./cms/fields": {
-      "import": "./dist/cms/fields/index.js",
+      "import": "./dist/cms/fields/index.mjs",
       "types": "./dist/cms/fields/index.d.ts",
-      "default": "./dist/cms/fields/index.js"
+      "require": "./dist/cms/fields/index.cjs"
     },
     "./cms/hooks": {
-      "import": "./dist/cms/hooks/index.js",
+      "import": "./dist/cms/hooks/index.mjs",
       "types": "./dist/cms/hooks/index.d.ts",
-      "default": "./dist/cms/hooks/index.js"
+      "require": "./dist/cms/hooks/index.cjs"
     },
     "./next": {
-      "import": "./dist/next/index.js",
+      "import": "./dist/next/index.mjs",
       "types": "./dist/next/index.d.ts",
-      "default": "./dist/next/index.js"
+      "require": "./dist/next/index.cjs"
     },
     "./utils/formatters": {
-      "import": "./dist/utils/formatters/index.js",
+      "import": "./dist/utils/formatters/index.mjs",
       "types": "./dist/utils/formatters/index.d.ts",
-      "default": "./dist/utils/formatters/index.js"
+      "require": "./dist/utils/formatters/index.cjs"
     },
     "./utils/parsers": {
-      "import": "./dist/utils/parsers/index.js",
+      "import": "./dist/utils/parsers/index.mjs",
       "types": "./dist/utils/parsers/index.d.ts",
-      "default": "./dist/utils/parsers/index.js"
+      "require": "./dist/utils/parsers/index.cjs"
     },
     "./utils/validators": {
-      "import": "./dist/utils/validators/index.js",
+      "import": "./dist/utils/validators/index.mjs",
       "types": "./dist/utils/validators/index.d.ts",
-      "default": "./dist/utils/validators/index.js"
+      "require": "./dist/utils/validators/index.cjs"
     },
     "./utils/ts": {
-      "import": "./dist/utils/ts/index.js",
+      "import": "./dist/utils/ts/index.mjs",
       "types": "./dist/utils/ts/index.d.ts",
-      "default": "./dist/utils/ts/index.js"
+      "require": "./dist/utils/ts/index.cjs"
     },
     "./cms/localization/types": {
-      "types": "./dist/cms/localization/types.js",
+      "types": "./dist/cms/localization/types.mjs",
       "import": "./dist/cms/localization/types.d.ts",
-      "default": "./dist/cms/localization/types.js"
+      "require": "./dist/cms/localization/types.cjs"
     },
     "./next/theme/types": {
-      "types": "./dist/next/theme/types.js",
+      "types": "./dist/next/theme/types.mjs",
       "import": "./dist/next/theme/types.d.ts",
-      "default": "./dist/next/theme/types.js"
+      "require": "./dist/next/theme/types.cjs"
     },
     "./next/seo": {
-      "import": "./dist/next/seo/index.js",
+      "import": "./dist/next/seo/index.mjs",
       "types": "./dist/next/seo/index.d.ts",
-      "default": "./dist/next/seo/index.js"
+      "require": "./dist/next/seo/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "vitest run"
@@ -104,6 +104,26 @@
     "@fredperr/excavator-config-eslint": "workspace:*",
     "tsup": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@payloadcms/db-mongodb": "catalog:",
+    "@payloadcms/next": "catalog:",
+    "@payloadcms/plugin-cloud": "catalog:",
+    "@payloadcms/richtext-lexical": "catalog:",
+    "@payloadcms/ui": "catalog:",
+    "@tailwindcss/typography": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "next": "catalog:",
+    "payload": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "catalog:",
+    "typescript": "catalog:",
+    "lucide-react": "catalog:",
+    "graphql": "catalog:"
   },
   "dependencies": {
     "react": "catalog:",

@@ -26,6 +26,7 @@ catalog:
   "@payloadcms/eslint-config": "beta"
   "@payloadcms/graphql": "beta"
   "@payloadcms/ui": "beta"
+  "graphql": "^16.8.1"
   next: "15.0.0-canary.173"
   eslint-config-next: "^15.0.0-rc.0"
   autoprefixer: "^10.4.18"
