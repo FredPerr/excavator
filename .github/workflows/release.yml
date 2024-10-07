@@ -5,10 +5,15 @@ on:
     branches:
       - main
 
+env:
+  CI: true,
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
+    timeout-minutes: 15
     name: Release
     runs-on: ubuntu-latest
     steps:
