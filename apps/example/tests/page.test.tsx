@@ -4,6 +4,6 @@ import Page from '../src/app/(frontend)/page'
 import React from 'react'
  
 test('Page', () => {
-  render(<Page />)
+  render(<Page />,)
   expect(screen.getByRole('heading', { level: 1, name: 'Home' })).toBeDefined()
 })
