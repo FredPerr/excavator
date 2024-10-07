@@ -1,20 +1,100 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "@fredperr/excavator",
   "private": false,
   "version": "0.1.1",
+  "description": "Prepare the terrain for the real website more quickly with this PayloadCMS plugin.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "license": "MIT",
+  "author": "Frédéric Perron <frederic.perr@gmail.com> (https://github.com/FredPerr/)",
+  "homepage": "https://github.com/FredPerr/excavator",
+  "bugs": "https://github.com/FredPerr/excavator/issues",
+  "keywords": [
+    "payloadcms",
+    "plugin",
+    "excavator",
+    "utility",
+    "website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FredPerr/excavator.git",
+    "directory": "packages/core"
+  },
   "files": [
     "dist/**"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./cms": {
+      "import": "./dist/cms/index.js",
+      "types": "./dist/cms/index.d.ts",
+      "default": "./dist/cms/index.js"
+    },
+    "./cms/fields": {
+      "import": "./dist/cms/fields/index.js",
+      "types": "./dist/cms/fields/index.d.ts",
+      "default": "./dist/cms/fields/index.js"
+    },
+    "./cms/hooks": {
+      "import": "./dist/cms/hooks/index.js",
+      "types": "./dist/cms/hooks/index.d.ts",
+      "default": "./dist/cms/hooks/index.js"
+    },
+    "./next": {
+      "import": "./dist/next/index.js",
+      "types": "./dist/next/index.d.ts",
+      "default": "./dist/next/index.js"
+    },
+    "./utils/formatters": {
+      "import": "./dist/utils/formatters/index.js",
+      "types": "./dist/utils/formatters/index.d.ts",
+      "default": "./dist/utils/formatters/index.js"
+    },
+    "./utils/parsers": {
+      "import": "./dist/utils/parsers/index.js",
+      "types": "./dist/utils/parsers/index.d.ts",
+      "default": "./dist/utils/parsers/index.js"
+    },
+    "./utils/validators": {
+      "import": "./dist/utils/validators/index.js",
+      "types": "./dist/utils/validators/index.d.ts",
+      "default": "./dist/utils/validators/index.js"
+    },
+    "./utils/ts": {
+      "import": "./dist/utils/ts/index.js",
+      "types": "./dist/utils/ts/index.d.ts",
+      "default": "./dist/utils/ts/index.js"
+    },
+    "./cms/localization/types": {
+      "types": "./dist/cms/localization/types.js",
+      "import": "./dist/cms/localization/types.d.ts",
+      "default": "./dist/cms/localization/types.js"
+    },
+    "./next/theme/types": {
+      "types": "./dist/next/theme/types.js",
+      "import": "./dist/next/theme/types.d.ts",
+      "default": "./dist/next/theme/types.js"
+    },
+    "./next/seo": {
+      "import": "./dist/next/seo/index.js",
+      "types": "./dist/next/seo/index.d.ts",
+      "default": "./dist/next/seo/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@fredperr/excavator-config-ts": "workspace:*",
@@ -27,7 +107,8 @@
   },
   "dependencies": {
     "react": "catalog:",
-    "@fredperr/excavator-config-tailwind": "workspace:*"
+    "@fredperr/excavator-config-tailwind": "workspace:*",
+    "vitest": "catalog:"
   },
   "publishConfig": {
     "access": "public"
