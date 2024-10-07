@@ -107,8 +107,7 @@
   },
   "dependencies": {
     "react": "catalog:",
-    "@fredperr/excavator-config-tailwind": "workspace:*",
-    "vitest": "catalog:"
+    "@fredperr/excavator-config-tailwind": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
