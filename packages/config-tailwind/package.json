@@ -1,7 +1,7 @@
 {
   "name": "@fredperr/excavator-config-tailwind",
   "version": "0.2.0",
-  "private": true,
+  "private": false,
   "exports": {
     "./tailwind-config": "./tailwind.config.ts",
     "./postcss-config": "./postcss.config.js",
