@@ -35,7 +35,8 @@
     "tailwindcss": "catalog:"
   },
   "dependencies": {
-    "react": "catalog:"
+    "react": "catalog:",
+    "@fredperr/excavator-config-tailwind": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

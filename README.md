@@ -1,73 +1,161 @@
-# Turborepo Design System starter with Changesets
+# Excavator
 
-This is an official React design system starter powered by Turborepo. Versioning and package publishing is handled by [Changesets](https://github.com/changesets/changesets) and fully automated with GitHub Actions.
+Prepare the terrain for the real website more quickly with this PayloadCMS plugin.
 
-## Using this example
+## What is Excavator?
 
-Run the following command:
+A **PayloadCMS 3.0** plugin providing faster-to-use CMS recurring code utilities and NextJS utilities.
 
-```sh
-npx create-turbo@latest -e with-changesets
+PayloadCMS gives the developer basically complete control over what he want to do.
+But, sometimes, we need to do the same thing over and over again.
+
+## Getting started
+
+### Installation
+
+```bash
+pnpm install @fredperr/excavator
 ```
 
-## What's inside?
+If you want the UI extensions too (based on ShadCN):
 
-This Turborepo includes the following:
-
-### Apps and Packages
-
-- `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org/)
-- `@acme/core`: core React components
-- `@acme/utils`: shared React utilities
-- `@acme/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
-- `@acme/eslint-config`: ESLint preset
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Useful commands
-
-- `yarn build` - Build all packages and the docs site
-- `yarn dev` - Develop all packages and the docs site
-- `yarn lint` - Lint all packages
-- `yarn changeset` - Generate a changeset
-- `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
-
-### Changing the npm organization scope
-
-The npm organization scope for this design system starter is `@acme`. To change this, it's a bit manual at the moment, but you'll need to do the following:
-
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `yarn install`
-
-## Versioning and Publishing packages
-
-Package publishing has been configured using [Changesets](https://github.com/changesets/changesets). Please review their [documentation](https://github.com/changesets/changesets#documentation) to familiarize yourself with the workflow.
-
-This example comes with automated npm releases setup in a [GitHub Action](https://github.com/changesets/action). To get this working, you will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository settings. You should also install the [Changesets bot](https://github.com/apps/changeset-bot) on your GitHub repository as well.
-
-For more information about this automation, refer to the official [changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
-
-### npm
-
-If you want to publish package to the public npm registry and make them publicly available, this is already setup.
-
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
+```bash
+pnpm install @fredperr/excavator-ui
 ```
 
-### GitHub Package Registry
+If you use the UI extensions, you will need to configure `tailwindcss` and `postcss`:
 
-See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
+
+**In your `postcss.config.js`:**
+```javascript
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+**In your `tailwind.config.js`:**
+```typescript
+import type { Config } from "tailwindcss";
+import sharedConfig from "@fredperr/excavator-config-tailwind";
+
+const config: Pick<Config, "content" | "presets"> = {
+  content: ["./src/app/**/*.tsx"],
+  presets: [sharedConfig],
+};
+
+export default config;
+```
+
+## What it does?
+
+Excavator can be divised between three main parts:
+
+1. **CMS utilities**: utilities to make the CMS development faster.
+   - **CMS collections**: configurable common collections.
+   - **CMS fields**: configurable common fields (e.g. phone number, email, country).
+   - **CMS components**: components that can be used in the CMS (e.g. redirection to website, custom buttons).
+   - **CMS hooks**: common recurring hooks.
+   - **CMS utils**: utilities that are specific to PayloadCMS.
+   - **CMS validations & formats**: common validations & formats for fields and documents.
+   - **CMS permissions**: role based permission system.
+   - **CMS blocks**: recurring blocks in the payload environment.
+   - **CMS content creation**: utilities to create content in the CMS and serve it (content builder).
+   - **Send email when CMS error or event**: send email when an error or event occurs in the CMS.
+
+2. **NextJS utilities**: utilities to make the NextJS development faster.
+
+   - **NextJS components**: components that can be used in the NextJS (often based on shadcn + tailwind).
+   - **NextJS hooks**: hooks that can be used in the NextJS.
+   - **NextJS utils**: utilities that can be used in the NextJS.
+   - **NextJS validations**: validations that can be used in the NextJS (such as for forms).
+   - **NextJS localization**: locale utilities for simple localization.
+
+3. **Utilities**: utilities that can be used in both CMS and NextJS.
+   - **Common utils**: JS & TS utilities (e.g. string transformations, algorithms)
+   - **Common validations & formats**: validations and formats that can be used in both CMS and NextJS.
+
+> some of the parts overlap such as validation and formating.
+
+## How to use it?
+
+1. Install the plugin in your PayloadCMS project:
+
+```bash
+pnpm install @fredperr/excavator
+```
+
+2. Import the plugin in your PayloadCMS config (`payload.config.ts`):
+
+```typescript
+import { ExcavatorPlugin } from "@fredperr/excavator/cms"
+import { buildConfig } from "payload"
+
+// ...
+
+export default buildConfig({
+  // Make sure to configure the editor if using lexical in the utilities (e.g. the content builder).
+  editor: lexicalEditor({
+    features({ defaultFeatures }) {
+      return [
+        ...defaultFeatures,
+        /*
+        BlocksFeature({
+          blocks: [...],
+        }),
+        */
+      ]
+    },
+  }),
+
+  // Configure your localization if using the localization utilities.
+  localization: {
+    locales: ["en", "fr"],
+    defaultLocale: "en",
+  },
+
+  plugins: [
+    // ...
+    Excavator({
+      // Configure the plugin here (see the documentation).
+    }),
+    // other plugins here.
+  ],
+})
+```
+
+### Package structure
+
+The package is divided into three main parts:
+
+- `@fredperr/excavator/cms`: utilities for the CMS.
+- `@fredperr/excavator/next`: utilities for NextJS.
+- `@fredperr/excavator/utils`: utilities that can be used in both CMS and NextJS.
+
+Since PayloadCMS depends on NextJS, the structure of this plugin follows this cascade structure:
+
+```plaintext
+@fredperr/excavator/cms
+|
+|- depends on -> @fredperr/excavator/next
+                 |
+                 |-> depends on -> @fredperr/excavator/utils
+```
+
+Most utilities that can be used in both NextJS and Payload will be found inside the `utils` package.
+But if a utility can't be used on its own as a JS or TS utility because it relies on NextJS, it will be found in the `next` package.
+If the utility depends on PayloadCMS, it will be found in the `cms` package.
+
+### Documentation
+
+The documentation is available in the [docs](./docs) folder.
+An example project using most, if not all, functionalities is available in the [example](./example) folder.
+This project act as the testing ground for the plugin.
+
+### PayloadCMS version
+
+> The plugin is made for PayloadCMS 3. The plugin won't work with PayloadCMS 2.
+> PayloadCMS 3 is still in beta but should not have any breaking changes (after version 3.0.0-beta.79) according to the Payload Team.
+> So make sure to use a version above that one.
