@@ -1,5 +1,15 @@
 # @fredperr/excavator-config-ts
 
+## 0.2.0
+
+### Minor Changes
+
+- ccf21f9: Add UI package working with example project and other configs
+
+### Patch Changes
+
+- 816db3d: Added base formatting, parsing and validations
+
 ## 0.1.1
 
 ### Patch Changes
