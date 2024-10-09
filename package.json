@@ -3,7 +3,8 @@
   "name": "excavator",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --filter=./packages/*",
+    "build:all": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "clean": "turbo clean && rm -rf node_modules",
