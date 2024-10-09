@@ -1,5 +1,6 @@
-import { deepMerge } from "payload"
+import { deepMerge, PayloadRequest } from "payload"
 import { Role } from "."
+import { getUserRole } from "../fields"
 
 const defaultRoles: Role[] = [
   {
@@ -59,4 +60,13 @@ export function hasPermissionLevel(roleLevel: number, allowedLevel: number): boo
 
 export function getRoleByLevel(level: number): Role | undefined {
   return ROLES.find(role => role.level === level)
+}
+
+export function hasPermisionForRequest(request: PayloadRequest, allowedLevel: number): boolean {
+  const roleNum = getUserRole({ req: request })
+
+  if (roleNum === null)
+    return false
+
+  return hasPermissionLevel(roleNum, allowedLevel)
 }
