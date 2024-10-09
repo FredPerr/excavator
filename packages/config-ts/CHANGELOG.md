@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-ts
 
+## 0.3.0
+
+### Minor Changes
+
+- Fixed exports of packages
+
 ## 0.2.4
 
 ### Patch Changes

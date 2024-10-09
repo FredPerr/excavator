@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "@fredperr/excavator",
   "private": false,
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Prepare the terrain for the real website more quickly with this PayloadCMS plugin.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

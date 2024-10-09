@@ -1,5 +1,17 @@
 # @fredperr/excavator-ui
 
+## 0.3.0
+
+### Minor Changes
+
+- Fixed exports of packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @fredperr/excavator-config-tailwind@0.3.0
+  - @fredperr/excavator@0.3.0
+
 ## 0.2.4
 
 ### Patch Changes
