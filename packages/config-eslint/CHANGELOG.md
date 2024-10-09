@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-eslint
 
+## 0.2.4
+
+### Patch Changes
+
+- Update monorepo build to exclude examples builds
+
 ## 0.2.3
 
 ### Patch Changes

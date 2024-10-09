@@ -1,5 +1,14 @@
 # @fredperr/excavator-ui
 
+## 0.2.4
+
+### Patch Changes
+
+- Update monorepo build to exclude examples builds
+- Updated dependencies
+  - @fredperr/excavator-config-tailwind@0.2.4
+  - @fredperr/excavator@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes
