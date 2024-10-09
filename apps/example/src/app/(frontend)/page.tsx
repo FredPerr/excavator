@@ -1,4 +1,4 @@
-import { Button } from '@fredperr/excavator-ui/button'
+import { Button } from '@fredperr/excavator-ui/primitives'
 import Link from 'next/link'
  
 export default function Page() {

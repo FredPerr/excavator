@@ -23,7 +23,8 @@
     "@payloadcms/next": "catalog:",
     "@payloadcms/plugin-cloud": "catalog:",
     "@payloadcms/richtext-lexical": "catalog:",
-    "@payloadcms/translations": "3.0.0-beta.29",
+    "@payloadcms/translations": "catalog:",
+    "@payloadcms/ui": "catalog:",
     "cross-env": "^7.0.3",
     "graphql": "^16.9.0",
     "next": "catalog:",
@@ -42,7 +43,14 @@
     "eslint-config-next": "catalog:",
     "postcss": "^8.4.47",
     "tailwindcss": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "global-jsdom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"

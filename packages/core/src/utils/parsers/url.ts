@@ -24,15 +24,15 @@ export function getRelativeUrl(
 /**
  * Get the absolute url from a relative url
  * @param relativeUrl The relative url
+ * @param publicServerURL The public server url
  * @returns The absolute url
  * @example
  * const url = getAbsoluteUrl("/path/to/file?search=1#hash")
  * console.log(url) // "https://example.com/path/to/file?search=1#hash"
  * @throws Error if NEXT_PUBLIC_SERVER_URL is not set
  */
-export function getAbsoluteUrl(relativeUrl: string): string {
-  if (!process.env.NEXT_PUBLIC_SERVER_URL) throw new Error("NEXT_PUBLIC_SERVER_URL is not set")
+export function getAbsoluteUrl(relativeUrl: string, publicServerURL: string): string {
+  if (!publicServerURL) throw new Error("NEXT_PUBLIC_SERVER_URL is not set")
 
-  const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL
-  return new URL(relativeUrl, baseUrl).toString()
+  return new URL(relativeUrl, publicServerURL).toString()
 }

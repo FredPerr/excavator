@@ -5,8 +5,8 @@ import { headers as getHeaders } from 'next/headers'
 import { parseCookies } from 'payload'
 import { getRequestLanguage } from '@payloadcms/ui/utilities/getRequestLanguage'
 import { createClientConfig, getRequestTheme } from '@fredperr/excavator/cms'
-//import { mergeOpenGraph } from '@fredperr/excavator/next/seo'
-import { Providers } from './providers'
+import { createOpenGraphMeta } from '@fredperr/excavator/next/seo'
+import { Providers } from './_providers'
 import { Poppins } from 'next/font/google'
 import { Metadata } from 'next'
 
@@ -22,7 +22,7 @@ interface RootLayoutProps {
 export default async function RootLayout({ children }: RootLayoutProps) {
   const config = await configPromise
   const clientConfig = createClientConfig(config)
-  const headers = getHeaders()
+  const headers = await getHeaders()
   const cookies = parseCookies(headers)
 
   const theme = getRequestTheme({
@@ -63,17 +63,10 @@ export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SERVER_URL?.includes('://localhost')
     ? new URL(process.env.NEXT_PUBLIC_SERVER_URL)
     : null,
-  openGraph: mergeOpenGraph({
+  openGraph: createOpenGraphMeta(process.env.NEXT_PUBLIC_SERVER_URL as string, {
     siteName: 'Excavator',
     title: 'Excavator',
     description: 'Excavator Demo project for Payload CMS and Next.js',
-    images: [
-      {
-        url: process.env.NEXT_PUBLIC_SERVER_URL
-          ? `${process.env.NEXT_PUBLIC_SERVER_URL}/open-graph.jpg`
-          : '/open-graph.jpg',
-      },
-    ],
     url: process.env.NEXT_PUBLIC_SERVER_URL,
     type: 'website',
     alternateLocale: ['en', 'fr'],

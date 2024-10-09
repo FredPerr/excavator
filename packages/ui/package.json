@@ -20,32 +20,69 @@
     "dist/**"
   ],
   "exports": {
-    "./button": "./src/Button.tsx",
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    },
+    "./primitives": {
+      "import": "./dist/primitives/index.mjs",
+      "types": "./dist/primitives/index.d.ts",
+      "require": "./dist/primitives/index.js"
+    },
+    "./components": {
+      "import": "./dist/components/index.mjs",
+      "types": "./dist/components/index.d.ts",
+      "require": "./dist/components/index.js"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.mjs",
+      "types": "./dist/utils/index.d.ts",
+      "require": "./dist/utils/index.js"
+    }
   },
   "scripts": {
-    "build:tw": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src --format esm,cjs --watch --dts --external react",
+    "build": "tsup src --format esm,cjs --dts --external react",
     "lint": "eslint \"src/**/*.ts*\"",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@payloadcms/ui": "catalog:",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tailwindcss/typography": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "lucide-react": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "catalog:"
   },
   "devDependencies": {
-    "@fredperr/excavator-config-ts": "workspace:*",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "eslint": "catalog:",
     "@fredperr/excavator-config-eslint": "workspace:*",
-    "tsup": "catalog:",
+    "@fredperr/excavator-config-ts": "workspace:*",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "global-jsdom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "eslint": "catalog:",
     "postcss": "catalog:",
-    "typescript": "catalog:"
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   },
   "dependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
+    "@fredperr/excavator": "workspace:*",
     "@fredperr/excavator-config-tailwind": "workspace:*",
-    "@fredperr/excavator": "workspace:*"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "publishConfig": {
     "access": "public"

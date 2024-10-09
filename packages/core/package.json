@@ -103,7 +103,8 @@
     "eslint": "catalog:",
     "@fredperr/excavator-config-eslint": "workspace:*",
     "tsup": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "@payloadcms/db-mongodb": "catalog:",

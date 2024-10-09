@@ -28,6 +28,6 @@ test("gets relative url from invalid url", () => {
 
 test("throws error if NEXT_PUBLIC_SERVER_URL is not set", () => {
   // @ts-ignore
-  process.env.NEXT_PUBLIC_SERVER_URL = undefined
-  expect(() => getAbsoluteUrl("/path/to/file?search=1#hash")).toThrow()
+  const strNull = null as string
+  expect(() => getAbsoluteUrl("/path/to/file?search=1#hash", strNull)).toThrow()
 })

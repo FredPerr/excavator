@@ -1,22 +1,25 @@
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface"
+import { deepMerge } from "payload"
 
-const defaultOpenGraph: Metadata["openGraph"] = {
-  type: "website",
-  images: [
-    {
-      url: process.env.NEXT_PUBLIC_SERVER_URL
-        ? `${process.env.NEXT_PUBLIC_SERVER_URL}/open-graph.jpg`
-        : "/open-graph.jpg",
-    },
-  ],
-  siteName: "Excavator",
-  title: "Excavator PayloadCMS plugin",
-}
 
-export const mergeOpenGraph = (og?: Metadata["openGraph"]) => {
-  return {
-    ...defaultOpenGraph,
-    ...og,
-    images: og?.images ? og.images : defaultOpenGraph.images,
+
+type OpenGraph = Metadata['openGraph']
+
+export function createOpenGraphMeta(publicServerURL: string, og: OpenGraph = {}): OpenGraph {
+
+  if (!publicServerURL)
+    throw new Error("publicServerURL is required to generate OpenGraph images")
+
+  const base: OpenGraph = {
+    type: "website",
+    images: [
+      {
+        url: publicServerURL + "/open-graph.jpg",
+      },
+    ],
+    siteName: "Website Name",
+    title: "Website Title",
   }
+
+  return deepMerge<OpenGraph, OpenGraph>(base, og)
 }
