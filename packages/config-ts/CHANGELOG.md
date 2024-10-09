@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-ts
 
+## 0.2.2
+
+### Patch Changes
+
+- Included permissions folder in CMS utilities
+
 ## 0.2.1
 
 ### Patch Changes

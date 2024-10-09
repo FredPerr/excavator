@@ -1,5 +1,13 @@
 # @fredperr/excavator
 
+## 0.2.2
+
+### Patch Changes
+
+- Included permissions folder in CMS utilities
+- Updated dependencies
+  - @fredperr/excavator-config-tailwind@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
