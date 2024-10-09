@@ -31,62 +31,62 @@
     ".": {
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     },
     "./cms": {
       "import": "./dist/cms/index.mjs",
       "types": "./dist/cms/index.d.ts",
-      "require": "./dist/cms/index.cjs"
+      "require": "./dist/cms/index.js"
     },
     "./cms/fields": {
       "import": "./dist/cms/fields/index.mjs",
       "types": "./dist/cms/fields/index.d.ts",
-      "require": "./dist/cms/fields/index.cjs"
+      "require": "./dist/cms/fields/index.js"
     },
     "./cms/hooks": {
       "import": "./dist/cms/hooks/index.mjs",
       "types": "./dist/cms/hooks/index.d.ts",
-      "require": "./dist/cms/hooks/index.cjs"
+      "require": "./dist/cms/hooks/index.js"
     },
     "./next": {
       "import": "./dist/next/index.mjs",
       "types": "./dist/next/index.d.ts",
-      "require": "./dist/next/index.cjs"
+      "require": "./dist/next/index.js"
     },
     "./utils/formatters": {
       "import": "./dist/utils/formatters/index.mjs",
       "types": "./dist/utils/formatters/index.d.ts",
-      "require": "./dist/utils/formatters/index.cjs"
+      "require": "./dist/utils/formatters/index.js"
     },
     "./utils/parsers": {
       "import": "./dist/utils/parsers/index.mjs",
       "types": "./dist/utils/parsers/index.d.ts",
-      "require": "./dist/utils/parsers/index.cjs"
+      "require": "./dist/utils/parsers/index.js"
     },
     "./utils/validators": {
       "import": "./dist/utils/validators/index.mjs",
       "types": "./dist/utils/validators/index.d.ts",
-      "require": "./dist/utils/validators/index.cjs"
+      "require": "./dist/utils/validators/index.js"
     },
     "./utils/ts": {
       "import": "./dist/utils/ts/index.mjs",
       "types": "./dist/utils/ts/index.d.ts",
-      "require": "./dist/utils/ts/index.cjs"
+      "require": "./dist/utils/ts/index.js"
     },
     "./cms/localization/types": {
       "types": "./dist/cms/localization/types.mjs",
       "import": "./dist/cms/localization/types.d.ts",
-      "require": "./dist/cms/localization/types.cjs"
+      "require": "./dist/cms/localization/types.js"
     },
     "./next/theme/types": {
       "types": "./dist/next/theme/types.mjs",
       "import": "./dist/next/theme/types.d.ts",
-      "require": "./dist/next/theme/types.cjs"
+      "require": "./dist/next/theme/types.js"
     },
     "./next/seo": {
       "import": "./dist/next/seo/index.mjs",
       "types": "./dist/next/seo/index.d.ts",
-      "require": "./dist/next/seo/index.cjs"
+      "require": "./dist/next/seo/index.js"
     }
   },
   "scripts": {

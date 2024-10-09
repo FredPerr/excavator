@@ -1,7 +1,7 @@
 import { expect, test } from "vitest"
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import { PhoneInput } from "../dist/components/PhoneInput"
+import { PhoneInput } from "../src/components/PhoneInput"
 import '@testing-library/jest-dom'
 
 
