@@ -1,2 +1,1 @@
-//export { switchLocaleServerAction } from "./switchLocale"
-export { findLocaleFromCode } from "./findLocaleFromCode"
+export * from "./findLocaleFromCode"

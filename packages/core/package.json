@@ -33,11 +33,6 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.js"
     },
-    "./cms": {
-      "import": "./dist/cms/index.mjs",
-      "types": "./dist/cms/index.d.ts",
-      "require": "./dist/cms/index.js"
-    },
     "./cms/fields": {
       "import": "./dist/cms/fields/index.mjs",
       "types": "./dist/cms/fields/index.d.ts",
@@ -53,10 +48,50 @@
       "types": "./dist/cms/permissions/index.d.ts",
       "require": "./dist/cms/permissions/index.js"
     },
+    "./cms/localizatino": {
+      "import": "./dist/cms/localization/index.mjs",
+      "types": "./dist/cms/localization/index.d.ts",
+      "require": "./dist/cms/localization/index.js"
+    },
+    "./cms/utils": {
+      "import": "./dist/cms/utils/index.mjs",
+      "types": "./dist/cms/utils/index.d.ts",
+      "require": "./dist/cms/utils/index.js"
+    },
+    "./cms/localization/types": {
+      "types": "./dist/cms/localization/types.mjs",
+      "import": "./dist/cms/localization/types.d.ts",
+      "require": "./dist/cms/localization/types.js"
+    },
     "./next": {
       "import": "./dist/next/index.mjs",
       "types": "./dist/next/index.d.ts",
       "require": "./dist/next/index.js"
+    },
+    "./next/browser": {
+      "import": "./dist/next/browser/index.mjs",
+      "types": "./dist/next/browser/index.d.ts",
+      "require": "./dist/next/browser/index.js"
+    },
+    "./next/localization": {
+      "import": "./dist/next/localization/index.mjs",
+      "types": "./dist/next/localization/index.d.ts",
+      "require": "./dist/next/localization/index.js"
+    },
+    "./next/providers": {
+      "import": "./dist/next/providers/index.mjs",
+      "types": "./dist/next/providers/index.d.ts",
+      "require": "./dist/next/providers/index.js"
+    },
+    "./next/seo": {
+      "import": "./dist/next/seo/index.mjs",
+      "types": "./dist/next/seo/index.d.ts",
+      "require": "./dist/next/seo/index.js"
+    },
+    "./next/theme/types": {
+      "types": "./dist/next/theme/types.mjs",
+      "import": "./dist/next/theme/types.d.ts",
+      "require": "./dist/next/theme/types.js"
     },
     "./utils/formatters": {
       "import": "./dist/utils/formatters/index.mjs",
@@ -77,21 +112,6 @@
       "import": "./dist/utils/ts/index.mjs",
       "types": "./dist/utils/ts/index.d.ts",
       "require": "./dist/utils/ts/index.js"
-    },
-    "./cms/localization/types": {
-      "types": "./dist/cms/localization/types.mjs",
-      "import": "./dist/cms/localization/types.d.ts",
-      "require": "./dist/cms/localization/types.js"
-    },
-    "./next/theme/types": {
-      "types": "./dist/next/theme/types.mjs",
-      "import": "./dist/next/theme/types.d.ts",
-      "require": "./dist/next/theme/types.js"
-    },
-    "./next/seo": {
-      "import": "./dist/next/seo/index.mjs",
-      "types": "./dist/next/seo/index.d.ts",
-      "require": "./dist/next/seo/index.js"
     }
   },
   "scripts": {

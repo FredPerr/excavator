@@ -62,7 +62,7 @@ export function getRoleByLevel(level: number): Role | undefined {
   return ROLES.find(role => role.level === level)
 }
 
-export function hasPermisionForRequest(request: PayloadRequest, allowedLevel: number): boolean {
+export function hasPermissionForRequest(request: PayloadRequest, allowedLevel: number): boolean {
   const roleNum = getUserRole({ req: request })
 
   if (roleNum === null)
