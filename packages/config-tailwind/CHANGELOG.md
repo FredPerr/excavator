@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-tailwind
 
+## 0.2.1
+
+### Patch Changes
+
+- 9c6e3c5: Fixed monorepo to use tests correctly in all packages
+
 ## 0.2.0
 
 ### Minor Changes
