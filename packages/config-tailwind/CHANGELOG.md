@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-tailwind
 
+## 0.2.3
+
+### Patch Changes
+
+- e1d9d26: Added separate build command for all packages
+
 ## 0.2.2
 
 ### Patch Changes
