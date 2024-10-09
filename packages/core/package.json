@@ -48,6 +48,11 @@
       "types": "./dist/cms/hooks/index.d.ts",
       "require": "./dist/cms/hooks/index.js"
     },
+    "./cms/permissions": {
+      "import": "./dist/cms/permissions/index.mjs",
+      "types": "./dist/cms/permissions/index.d.ts",
+      "require": "./dist/cms/permissions/index.js"
+    },
     "./next": {
       "import": "./dist/next/index.mjs",
       "types": "./dist/next/index.d.ts",
