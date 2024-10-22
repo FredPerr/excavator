@@ -1,5 +1,14 @@
 # @fredperr/excavator-ui
 
+## 0.3.1
+
+### Patch Changes
+
+- Fixed formatting bugs and rich text renderer
+- Updated dependencies
+  - @fredperr/excavator-config-tailwind@0.3.1
+  - @fredperr/excavator@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes
