@@ -1,8 +1,8 @@
 import { FieldHook, TextField, TextFieldSingleValidation } from "payload"
-import { validateSlug } from "../../../utils/validators/slug"
+import { validateSlug } from "../../utils/validators/slug"
 import { deepMerge } from "payload"
-import { slugify } from "../../../utils/formatters/slug"
-import { isObject } from "../../../utils/ts/isObject"
+import { slugify } from "../../utils/formatters/slug"
+import { isObject } from "../../utils/ts/isObject"
 
 type Overrides = Partial<Omit<TextField, "type" | "localized">>
 type SlugField = (createFromField?: string, overrides?: Overrides) => TextField

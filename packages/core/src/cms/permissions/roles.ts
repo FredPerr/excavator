@@ -5,6 +5,13 @@ import { getUserRole } from "../fields"
 const defaultRoles: Role[] = [
   {
     label: {
+      fr: "Super administrateur",
+      en: "Super Administrator",
+    },
+    level: 1,
+  },
+  {
+    label: {
       fr: "Administrateur",
       en: "Administrator",
     },

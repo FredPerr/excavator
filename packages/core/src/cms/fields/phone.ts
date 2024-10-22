@@ -1,6 +1,6 @@
 import { deepMerge, TextField, Validate } from "payload"
-import { validateNortAmericanPhone } from "../../../utils/validators/phone"
-import { formatNorthAmerica } from "../../../utils/formatters/phone"
+import { validateNortAmericanPhone } from "../../utils/validators/phone"
+import { formatNorthAmerica } from "../../utils/formatters/phone"
 
 type Overrides = Partial<Omit<TextField, "type" | "localized">>
 

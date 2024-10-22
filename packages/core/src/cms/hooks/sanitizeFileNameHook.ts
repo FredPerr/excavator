@@ -1,5 +1,6 @@
 import { slugify } from "../../utils/formatters"
 import { HookOperationType, PayloadRequest, RequestContext, SanitizedCollectionConfig } from "payload";
+import { parseFilename } from "../../utils/parsers";
 
 type BeforeOperationHookInternal = (args: {
     args?: any;
@@ -15,8 +16,9 @@ type BeforeOperationHookInternal = (args: {
 
 const sanitizeFilenameHook: BeforeOperationHookInternal = ({ req }) => {
   if (req.file?.name) {
-    const newName = slugify(req.file.name)
-    req.file.name = newName
+    const { fileName, extension } = parseFilename(req.file.name)
+    const newName = slugify(fileName)
+    req.file.name = newName + (extension ? `.${extension.toLowerCase()}` : '')
   }
 }
 

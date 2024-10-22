@@ -43,12 +43,20 @@
       "types": "./dist/cms/hooks/index.d.ts",
       "require": "./dist/cms/hooks/index.js"
     },
+    "./cms/blocks": {
+      "import": "./dist/cms/blocks/index.mjs",
+      "types": "./dist/cms/blocks/index.d.ts",
+      "require": "./dist/cms/blocks/index.js"
+    },
+    "./cms/blocks/types": {
+      "types": "./dist/cms/blocks/types.d.ts"
+    },
     "./cms/permissions": {
       "import": "./dist/cms/permissions/index.mjs",
       "types": "./dist/cms/permissions/index.d.ts",
       "require": "./dist/cms/permissions/index.js"
     },
-    "./cms/localizatino": {
+    "./cms/localization": {
       "import": "./dist/cms/localization/index.mjs",
       "types": "./dist/cms/localization/index.d.ts",
       "require": "./dist/cms/localization/index.js"

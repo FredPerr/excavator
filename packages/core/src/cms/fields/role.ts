@@ -1,6 +1,6 @@
 import { deepMerge, FieldAccess, Option, SelectField, TypeWithID, User, Validate } from "payload"
-import { hasPermissionLevel, ROLES } from "../../permissions/roles"
-import { Role } from "../../permissions"
+import { hasPermissionLevel, ROLES } from "../permissions/roles"
+import { Role } from "../permissions"
 
 type Overrides = Partial<
   Omit<SelectField, "type" | "localized" | "role" | "required" | "options" | "validate">

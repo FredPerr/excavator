@@ -5,12 +5,11 @@
  * @returns {boolean} Whether the phone number is valid
  */
 export function validateNortAmericanPhone(phone: string): boolean {
-  const cleanedNumber = phone.replace(/\D/g, "").replace(/^0+/, "")
+  const cleanedNumber = phone.replace(/\D/g, "")
   const numberLength = cleanedNumber.length
 
-  if (phone.startsWith("+")) {
-    return numberLength === 11
-  }
+  if (cleanedNumber.length === 11 && cleanedNumber.startsWith("1"))
+    return true
 
   return numberLength === 10
 }
