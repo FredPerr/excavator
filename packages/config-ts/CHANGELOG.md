@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-ts
 
+## 0.4.0
+
+### Minor Changes
+
+- Added base RichText rendering
+
 ## 0.3.1
 
 ### Patch Changes

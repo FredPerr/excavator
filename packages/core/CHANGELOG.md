@@ -1,5 +1,16 @@
 # @fredperr/excavator
 
+## 0.4.0
+
+### Minor Changes
+
+- Added base RichText rendering
+
+### Patch Changes
+
+- Updated dependencies
+  - @fredperr/excavator-config-tailwind@0.4.0
+
 ## 0.3.1
 
 ### Patch Changes
