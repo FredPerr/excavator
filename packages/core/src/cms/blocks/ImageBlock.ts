@@ -1,6 +1,5 @@
 import { Block } from 'payload'
 import { imageField, ImageFieldOverrides } from '../fields/image'
-import { imageAltField } from '../fields'
 
 type ImageBlockFunction = (imageCollectionSlug: string, overrides: ImageFieldOverrides) => Block
 
@@ -12,7 +11,7 @@ export const ImageBlock: ImageBlockFunction = (imageCollectionSlug, overrides) =
       singular: 'Image',
       plural: "Images",
     },
-    fields: [imageField(imageCollectionSlug, overrides), imageAltField()],
+    fields: [imageField(imageCollectionSlug, overrides)],
   }
 
 }

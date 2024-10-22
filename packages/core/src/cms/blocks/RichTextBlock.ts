@@ -4,7 +4,7 @@ import { Block } from 'payload'
 
 type RichTextBlockFunction = (converters: HTMLConverter[], overrides: RichTextOverrides) => Block
 
-export const RichTextBlock: RichTextBlockFunction = (converters, overrides) => {
+export const RichTextBlock: RichTextBlockFunction = (converters = [], overrides = {}) => {
   return {
     slug: 'richText',
     interfaceName: 'RichTextBlock',
