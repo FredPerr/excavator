@@ -1,5 +1,11 @@
 # @fredperr/excavator-config-tailwind
 
+## 0.5.0
+
+### Minor Changes
+
+- Bumped dependencies of payload to v3
+
 ## 0.4.0
 
 ### Minor Changes
